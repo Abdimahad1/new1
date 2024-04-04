@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .semester-container {
+            margin-bottom: 20px;
+        }
+        .semester-btn {
+            display: inline-block;
+            width: auto;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            text-align: left;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .semester-btn:hover {
+            background-color: #0056b3;
+        }
+        .subjects {
+            display: none;
+            margin-left: 20px;
+        }
+        .subject {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Courses We Have Taken</h1>
+        <div class="semester-container">
+            <button class="semester-btn" onclick="toggleSubjects('semester1')">Semester 1</button>
+            <div class="subjects" id="semester1">
+                <div class="subject">
+                    <p>Subject 1</p>
+                    <p>Course Coordinator: Khalid</p>
+                </div>
+                <div class="subject">
+                    <p>Subject 2</p>
+                    <p>Course Coordinator: Diini</p>
+                </div>
+                <!-- Add more subjects for Semester 1 -->
+            </div>
+        </div>
+        
+        <div class="semester-container">
+            <button class="semester-btn" onclick="toggleSubjects('semester2')">Semester 2</button>
+            <div class="subjects" id="semester2">
+                <div class="subject">
+                    <p>Subject 1</p>
+                    <p>Course Coordinator: Faarax</p>
+                </div>
+                <div class="subject">
+                    <p>Subject 2</p>
+                    <p>Course Coordinator: Yuuusuf</p>
+                </div>
+                <!-- Add more subjects for Semester 2 -->
+            </div>
+        </div>
+        
+        <div class="semester-container">
+            <button class="semester-btn" onclick="toggleSubjects('semester3')">Semester 3</button>
+            <div class="subjects" id="semester3">
+                <div class="subject">
+                    <p>Subject 1</p>
+                    <p>Course Coordinator: Cali</p>
+                </div>
+                <!-- Add more subjects for Semester 3 -->
+            </div>
+        </div>
+        
+        <div class="semester-container">
+            <button class="semester-btn" onclick="toggleSubjects('semester4')">Semester 4</button>
+            <div class="subjects" id="semester4">
+                <div class="subject">
+                    <p>Subject 1</p>
+                    <p>Course Coordinator: Geedi</p>
+                </div>
+                <!-- Add more subjects for Semester 4 -->
+            </div>
+        </div>
+        
+        <div class="semester-container">
+            <button class="semester-btn" onclick="toggleSubjects('semester5')">Semester 5</button>
+            <div class="subjects" id="semester5">
+                <div class="subject">
+                    <p>Subject 1</p>
+                    <p>Course Coordinator: Daahir</p>
+                </div>
+                <!-- Add more subjects for Semester 5 -->
+            </div>
+        </div>
+        
+        <div class="semester-container">
+            <button class="semester-btn" onclick="toggleSubjects('semester6')">Semester 6</button>
+            <div class="subjects" id="semester6">
+                <div class="subject">
+                    <p>Subject 1</p>
+                    <p>Course Coordinator: Nuur</p>
+                </div>
+                <!-- Add more subjects for Semester 6 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSubjects(semesterId) {
+            var subjects = document.getElementById(semesterId);
+            var allSubjects = document.querySelectorAll('.subjects');
+            allSubjects.forEach(function(subject) {
+                if (subject.id !== semesterId) {
+                    subject.style.display = "none";
+                }
+            });
+            if (subjects.style.display === "none") {
+                subjects.style.display = "block";
+            } else {
+                subjects.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

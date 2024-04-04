@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .group {
+            margin-bottom: 20px;
+        }
+        .group h2 {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .subject {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .presentation-info {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Presentations</h1>
+        
+        <!-- Group 1 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group1')">Group 1</h2>
+            <div class="subject" id="group1">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-05</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 2 Presentation</p>
+                    <p>Date: 2024-04-07</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group 2 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group2')">Group 2</h2>
+            <div class="subject" id="group2">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Group 3 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group3')">Group 3</h2>
+            <div class="subject" id="group3">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group 4 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group4')">Group 4</h2>
+            <div class="subject" id="group4">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Add more groups here -->
+        <!-- Group 5 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group5')">Group 5</h2>
+            <div class="subject" id="group5">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group 6 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group6')">Group 6</h2>
+            <div class="subject" id="group6">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Group 7 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group7')">Group 7</h2>
+            <div class="subject" id="group7">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group 8 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group8')">Group 8</h2>
+            <div class="subject" id="group8">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Group 9 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group9')">Group 9</h2>
+            <div class="subject" id="group9">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group 10 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group10')">Group 10</h2>
+            <div class="subject" id="group10">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Group 11 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group11')">Group 11</h2>
+            <div class="subject" id="group11">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group 12 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group12')">Group 12</h2>
+            <div class="subject" id="group12">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Group 13 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group13')">Group 13</h2>
+            <div class="subject" id="group13">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Group 14 -->
+        <div class="group">
+            <h2 onclick="toggleSubjects('group14')">Group 14</h2>
+            <div class="subject" id="group14">
+                <div class="presentation-info">
+                    <p>Subject 1 Presentation</p>
+                    <p>Date: 2024-04-06</p>
+                </div>
+                <div class="presentation-info">
+                    <p>Subject 3 Presentation</p>
+                    <p>Date: 2024-04-08</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSubjects(groupId) {
+            var subjects = document.getElementById(groupId);
+            if (subjects.style.display === "none") {
+                subjects.style.display = "block";
+            } else {
+                subjects.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

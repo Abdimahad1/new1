@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule</title>
+  <style>
+    /* Inline CSS */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .schedule {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .date {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      position: relative; /* Add position relative */
+    }
+
+    .day {
+      margin-bottom: 20px;
+    }
+
+    .day-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .event {
+      margin-bottom: 20px;
+    }
+
+    .time {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      float: right;
+      color: #ffcc00; /* Time icon color */
+    }
+
+    .subject {
+      font-size: 16px;
+      margin-left: 20px; /* Add left margin */
+    }
+
+    .lecturer {
+      font-size: 14px;
+      margin-left: 20px; /* Add left margin */
+    }
+
+    .period-number {
+      display: inline-block;
+      background-color: #fff; /* Background color for period number */
+      color: #333; /* Text color for period number */
+      border-radius: 50%; /* Make it a circle */
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      cursor: pointer;
+      margin-right: 10px;
+      line-height: 30px;
+    }
+
+    .period-details {
+      display: none; /* Initially hide details */
+      padding-left: 40px; /* Add left padding */
+    }
+
+    .period-expanded .period-details {
+      display: block; /* Display period details when period is expanded */
+    }
+    .collapse-all-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="schedule">
+          <div class="date" id="date">
+            Schedule
+            <button class="collapse-all-button" onclick="collapseAll()" style="position: absolute; top: 0; right: 0;">Collapse All</button>
+        </div>
+      <div class="day" id="saturday" onclick="toggleDay(this)">
+        <div class="day-name">Saturday</div>
+        <div class="event" id="event1">
+          <div class="period-number" onclick="togglePeriod(this)">1</div>
+          <div class="period-details">
+            <div class="time">01:00 PM - 01:50 PM</div>
+            <div class="subject">Advanced Java Programming</div>
+            <div class="lecturer">Abdirizak Warsame Abdulle</div>
+          </div>
+        </div>
+        <div class="event" id="event2">
+          <div class="period-number" onclick="togglePeriod(this)">2</div>
+          <div class="period-details">
+            <div class="time">01:50 PM - 02:40 PM</div>
+            <div class="subject">Subject 2</div>
+            <div class="lecturer">Lecturer Name</div>
+          </div>
+        </div>
+
+        <div class="event" id="event3">
+          <div class="period-number" onclick="togglePeriod(this)">3</div>
+          <div class="period-details">
+            <div class="time">01:00 PM - 01:50 PM</div>
+            <div class="subject">Advanced Java Programming</div>
+            <div class="lecturer">Abdirizak Warsame Abdulle</div>
+          </div>
+        </div>
+        <div class="event" id="event4">
+          <div class="period-number" onclick="togglePeriod(this)">4</div>
+          <div class="period-details">
+            <div class="time">01:50 PM - 02:40 PM</div>
+            <div class="subject">Subject 2</div>
+            <div class="lecturer">Lecturer Name</div>
+          </div>
+        </div>
+        <!-- More events for Saturday -->
+      </div>
+      <div class="day" id="sunday" onclick="toggleDay(this)">
+        <div class="day-name">Sunday</div>
+        <div class="event" id="event1">
+            <div class="period-number" onclick="togglePeriod(this)">1</div>
+            <div class="period-details">
+              <div class="time">01:00 PM - 01:50 PM</div>
+              <div class="subject">Advanced Java Programming</div>
+              <div class="lecturer">Abdirizak Warsame Abdulle</div>
+            </div>
+          </div>
+          <div class="event" id="event2">
+            <div class="period-number" onclick="togglePeriod(this)">2</div>
+            <div class="period-details">
+              <div class="time">01:50 PM - 02:40 PM</div>
+              <div class="subject">Subject 2</div>
+              <div class="lecturer">Lecturer Name</div>
+            </div>
+          </div>
+  
+          <div class="event" id="event3">
+            <div class="period-number" onclick="togglePeriod(this)">3</div>
+            <div class="period-details">
+              <div class="time">01:00 PM - 01:50 PM</div>
+              <div class="subject">Advanced Java Programming</div>
+              <div class="lecturer">Abdirizak Warsame Abdulle</div>
+            </div>
+          </div>
+          <div class="event" id="event4">
+            <div class="period-number" onclick="togglePeriod(this)">4</div>
+            <div class="period-details">
+              <div class="time">01:50 PM - 02:40 PM</div>
+              <div class="subject">Subject 2</div>
+              <div class="lecturer">Lecturer Name</div>
+            </div>
+          </div>
+      <div class="day" id="monday" onclick="toggleDay(this)">
+        <div class="day-name">Monday</div>
+        <div class="event" id="event1">
+            <div class="period-number" onclick="togglePeriod(this)">1</div>
+            <div class="period-details">
+              <div class="time">01:00 PM - 01:50 PM</div>
+              <div class="subject">Advanced Java Programming</div>
+              <div class="lecturer">Abdirizak Warsame Abdulle</div>
+            </div>
+          </div>
+          <div class="event" id="event2">
+            <div class="period-number" onclick="togglePeriod(this)">2</div>
+            <div class="period-details">
+              <div class="time">01:50 PM - 02:40 PM</div>
+              <div class="subject">Subject 2</div>
+              <div class="lecturer">Lecturer Name</div>
+            </div>
+          </div>
+  
+          <div class="event" id="event3">
+            <div class="period-number" onclick="togglePeriod(this)">3</div>
+            <div class="period-details">
+              <div class="time">01:00 PM - 01:50 PM</div>
+              <div class="subject">Advanced Java Programming</div>
+              <div class="lecturer">Abdirizak Warsame Abdulle</div>
+            </div>
+          </div>
+          <div class="event" id="event4">
+            <div class="period-number" onclick="togglePeriod(this)">4</div>
+            <div class="period-details">
+              <div class="time">01:50 PM - 02:40 PM</div>
+              <div class="subject">Subject 2</div>
+              <div class="lecturer">Lecturer Name</div>
+            </div>
+          </div>
+      </div>
+      <div class="day" id="tuesday" onclick="toggleDay(this)">
+        <div class="day-name">Tuesday</div>
+        <div class="event" id="event1">
+            <div class="period-number" onclick="togglePeriod(this)">1</div>
+            <div class="period-details">
+              <div class="time">01:00 PM - 01:50 PM</div>
+              <div class="subject">Advanced Java Programming</div>
+              <div class="lecturer">Abdirizak Warsame Abdulle</div>
+            </div>
+          </div>
+          <div class="event" id="event2">
+            <div class="period-number" onclick="togglePeriod(this)">2</div>
+            <div class="period-details">
+              <div class="time">01:50 PM - 02:40 PM</div>
+              <div class="subject">Subject 2</div>
+              <div class="lecturer">Lecturer Name</div>
+            </div>
+          </div>
+  
+          <div class="event" id="event3">
+            <div class="period-number" onclick="togglePeriod(this)">3</div>
+            <div class="period-details">
+              <div class="time">01:00 PM - 01:50 PM</div>
+              <div class="subject">Advanced Java Programming</div>
+              <div class="lecturer">Abdirizak Warsame Abdulle</div>
+            </div>
+          </div>
+          <div class="event" id="event4">
+            <div class="period-number" onclick="togglePeriod(this)">4</div>
+            <div class="period-details">
+              <div class="time">01:50 PM - 02:40 PM</div>
+              <div class="subject">Subject 2</div>
+              <div class="lecturer">Lecturer Name</div>
+            </div>
+          </div>
+      </div>
+      <div class="day" id="wednesday" onclick="toggleDay(this)">
+        <div class="day-name">Wednesday</div>
+        <div class="event" id="event1">
+            <div class="period-number" onclick="togglePeriod(this)">1</div>
+            <div class="period-details">
+              <div class="time">01:00 PM - 01:50 PM</div>
+              <div class="subject">Advanced Java Programming</div>
+              <div class="lecturer">Abdirizak Warsame Abdulle</div>
+            </div>
+          </div>
+          <div class="event" id="event2">
+            <div class="period-number" onclick="togglePeriod(this)">2</div>
+            <div class="period-details">
+              <div class="time">01:50 PM - 02:40 PM</div>
+              <div class="subject">Subject 2</div>
+              <div class="lecturer">Lecturer Name</div>
+            </div>
+          </div>
+  
+          <div class="event" id="event3">
+            <div class="period-number" onclick="togglePeriod(this)">3</div>
+            <div class="period-details">
+              <div class="time">01:00 PM - 01:50 PM</div>
+              <div class="subject">Advanced Java Programming</div>
+              <div class="lecturer">Abdirizak Warsame Abdulle</div>
+            </div>
+          </div>
+          <div class="event" id="event4">
+            <div class="period-number" onclick="togglePeriod(this)">4</div>
+            <div class="period-details">
+              <div class="time">01:50 PM - 02:40 PM</div>
+              <div class="subject">Subject 2</div>
+              <div class="lecturer">Lecturer Name</div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDay(day) {
+      day.classList.toggle('day-expanded');
+    }
+
+    function togglePeriod(period) {
+      period.parentElement.classList.toggle('period-expanded');
+    }
+
+    function collapseAll() {
+      const periods = document.querySelectorAll('.period-expanded');
+      periods.forEach(period => {
+        period.classList.remove('period-expanded');
+      });
+    }
+
+    // Function to generate time slots
+    function generateTimeSlots(startTime, endTime, duration) {
+      const slots = [];
+      let currentTime = new Date(startTime);
+
+      while (currentTime < endTime) {
+        const endTimeSlot = new Date(currentTime.getTime() + duration * 60000); // Convert minutes to milliseconds
+        slots.push({
+          start: currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          end: endTimeSlot.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        });
+        currentTime = endTimeSlot;
+      }
+
+      return slots;
+    }
+
+    // Define period start and end times for Saturday
+    const periodStartSaturday = new Date('2024-04-02T13:00:00');
+    const periodEndSaturday = new Date('2024-04-02T17:00:00'); // Assuming the end of the last period is 5:00 PM
+    const durationSaturday = 50; // Duration of each period in minutes
+
+    // Generate time slots for each period for Saturday
+    const timeSlotsSaturday = generateTimeSlots(periodStartSaturday, periodEndSaturday, durationSaturday);
+
+    // Display current date, time, and day
+    const currentDate = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('date').textContent = currentDate.toLocaleDateString('en-US', options);
+    document.getElementById('date').innerHTML += `<span class="time">${currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>`;
+  </script>
+</body>
+</html>

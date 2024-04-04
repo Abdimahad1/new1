@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CA211</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 20px auto 50px auto; /* Adjusted margin */
+        }
+        .header {
+            width: 100%; /* Full width header */
+            text-align: center;
+            margin-bottom: 20px; /* Space between header and cards */
+        }
+        .header span {
+            color: #3498db; /* Color for "CA211" */
+        }
+        .header h1 {
+            color: #e74c3c; /* Color for "Legends" */
+        }
+        .card {
+            width: 48%; /* Two cards per row with some space in between */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box; /* Ensure padding is included in width */
+            transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for box-shadow and background-color */
+            background-color: #e6f5e6; /* Light green background color */
+        }
+        .card:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow effect on hover */
+            background-color: #2ecc71; /* Hard green background color on hover */
+        }
+        .card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* Make the image circular */
+            margin-bottom: 10px;
+        }
+        .card h2 {
+            margin-bottom: 5px;
+            font-size: 16px; /* Make the title smaller */
+        }
+        .card p {
+            margin-bottom: 10px;
+            font-size: 14px; /* Make the text smaller */
+        }
+        .small-info {
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>All <span>CA211</span> Legends</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <img src="images/u3.png" alt="Person Image">
+            <h2>John Doe</h2>
+            <p>President</p>
+            <p class="small-info">Started as Class Monitor in Semester 1</p>
+        </div>
+        <!-- Add more cards for other class monitors or members -->
+        <div class="card">
+            <img src="images/u3.png" alt="Person Image">
+            <h2>Jane Smith</h2>
+            <p>Vice President</p>
+            <p class="small-info">Started as Class Monitor in Semester 1</p>
+        </div>
+        <!-- Add more cards for other class monitors or members -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Loading</title>
+  <style>
+    /* CSS */
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .loading-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    
+    .loading-content {
+      text-align: center;
+    }
+    
+    .slideshow-container {
+      position: relative;
+      max-width: 400px;
+      height: 300px; /* Set a fixed height for the slideshow container */
+      margin: 20px auto;
+      overflow: hidden; /* Hide any overflow content */
+    }
+    
+    .slideshow img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s; /* Add a transition effect to smooth out size changes */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    }
+    
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      padding: 10px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .prev {
+      left: 0;
+    }
+    
+    .next {
+      right: 0;
+    }
+    
+    .dots-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    .active {
+      background-color: #333;
+    }
+    
+    .button-container {
+      text-align: center;
+      margin-top: 20px; /* Adjust margin as needed */
+    }
+    
+    /* Button styles */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-container">
+    <div class="loading-content">
+      <h1>Welcome to Our App</h1>
+      <div class="slideshow-container">
+        <div class="slideshow">
+          <img class="slide" src="images/u2.png" alt="Slide 1">
+          <img class="slide" src="images/u3.png" alt="Slide 3">
+          <!-- Add more images for the slideshow -->
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <div class="dots-container">
+        <!-- Dots will be dynamically generated here -->
+      </div>
+      <div class="button-container">
+        <button id="accept-btn">NEXT</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

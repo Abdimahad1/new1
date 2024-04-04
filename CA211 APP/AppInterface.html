@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Sidebar</title>
+  <style>
+    /* Inline CSS */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      color: #fff;
+      padding-top: 40px; /* Increase the top padding */
+      transition: 0.5s;
+      overflow-y: auto;
+      display: none; /* Initially hidden */
+    }
+
+    .sidebar a {
+      padding: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+      margin-left: 10px; /* Add margin to the left */
+      margin-top: 10px; /* Add margin to the top */
+    }
+
+    .sidebar a:hover {
+      background-color: #555;
+    }
+
+    .content {
+      margin-left: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center; /* Center the content horizontally */
+    }
+
+    .open-btn {
+      font-size: 30px;
+      cursor: pointer;
+      position: fixed;
+      left: 10px;
+      top: 10px;
+      z-index: 9999;
+      color: #fff;
+      display: block;
+    }
+
+    .image-slider {
+      display: flex;
+      justify-content: center; /* Center the images horizontally */
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .image-slide {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .image-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: 768px) {
+      .content {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <a href="Schedule.html">Scheduele</a>
+    <a href="Reminders.html">Reminders</a>
+    <a href="Groups.html">Groups</a>
+    <a href="profile.html">Profile</a>
+    <a href="AboutCA211.html">About CA211</a>
+    <a href="Courses.html">Courses</a>
+  </div>
+  <div class="content">
+    <span class="open-btn" onclick="toggleNav()">&#9776;</span>
+    <div class="image-slider" id="image-slider">
+      <div class="image-slide"><img src="images/uu1.png" alt="Image 1"></div>
+      <div class="image-slide"><img src="images/u3.png" alt="Image 2"></div>
+      <div class="image-slide"><img src="images/u2.png" alt="Image 3"></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleNav() {
+      var sidebar = document.getElementById("sidebar");
+      sidebar.style.display = sidebar.style.display === "none" ? "block" : "none";
+    }
+
+    // Slide images automatically
+    var index = 0;
+    var slides = document.querySelectorAll(".image-slide");
+    var totalSlides = slides.length;
+
+    function slideNext() {
+      slides[index].style.display = "none";
+      index = (index + 1) % totalSlides;
+      slides[index].style.display = "block";
+    }
+
+    setInterval(slideNext, 3000); // Change slide every 3 seconds
+  </script>
+</body>
+</html>

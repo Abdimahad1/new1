@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page</title>
+  <style>
+    /* CSS */
+    body {
+      background-color: #f0f0f0; /* Body background color */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .card {
+      background-color: #ffffff; /* Card background color */
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+      position: relative; /* Make the position of the eye icon relative to the form-group */
+    }
+    
+    label {
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: calc(100% - 30px); /* Adjust the width to accommodate the eye icon */
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    
+    .password-eye {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    
+    button {
+      background-color: #007bff; /* Button background color */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    
+    button:hover {
+      background-color: #0056b3; /* Button hover background color */
+    }
+    
+    .signup-text {
+      margin-top: 10px;
+    }
+    
+    .signup-link {
+      color: red; /* Signup link color */
+      cursor: pointer;
+    }
+    
+    .signup-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <h2>Sign Up</h2>
+      </div>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <i class="far fa-eye password-eye" id="password-eye"></i> <!-- Add eye icon here -->
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+          <i class="far fa-eye password-eye" id="confirm-password-eye"></i> <!-- Add eye icon here -->
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="signup-text">
+        <p>If you already have an account, <span id="login-link" class="signup-link">please log in</span>.</p>
+      </div>
+    </div>
+  </div>
+
+ 
+  <script>
+    // Add event listener to the eye icons
+    document.getElementById('password-eye').addEventListener('click', togglePasswordVisibility);
+    document.getElementById('confirm-password-eye').addEventListener('click', toggleConfirmPasswordVisibility);
+
+    // Function to toggle password visibility
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('password');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    }
+
+    // Function to toggle confirm password visibility
+    function toggleConfirmPasswordVisibility() {
+      var confirmPasswordInput = document.getElementById('confirm-password');
+      if (confirmPasswordInput.type === 'password') {
+        confirmPasswordInput.type = 'text';
+      } else {
+        confirmPasswordInput.type = 'password';
+      }
+    }
+
+    // Save user credentials to local storage
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      localStorage.setItem('email', email);
+      localStorage.setItem('password', password);
+      alert('Sign up successful. You will be redirected to login page.');
+      window.location.href = "login.html"; // Redirect to login page
+    });
+  </script>
+</body>
+</html>

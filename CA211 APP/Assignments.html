@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .subject {
+            margin-bottom: 20px;
+        }
+        .subject h2 {
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .assignments {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .assignment-info {
+            margin-bottom: 5px;
+        }
+        .start-date {
+            color: #28a745; /* green */
+            font-weight: bold;
+        }
+        .due-date {
+            color: #dc3545; /* red */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Assignments</h1>
+        <div class="subject">
+            <h2 onclick="toggleAssignments('subject1')">Subject 1</h2>
+            <div class="assignments" id="subject1">
+                <div class="assignment-info">
+                    <p>Assignment 1</p>
+                    <p>Start Date: <span class="start-date">2024-04-03</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-10</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 2</p>
+                    <p>Start Date: <span class="start-date">2024-04-05</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-12</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 3</p>
+                    <p>Start Date: <span class="start-date">2024-04-07</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-14</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="subject">
+            <h2 onclick="toggleAssignments('subject2')">Subject 2</h2>
+            <div class="assignments" id="subject2">
+                <div class="assignment-info">
+                    <p>Assignment 1</p>
+                    <p>Start Date: <span class="start-date">2024-04-03</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-10</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 2</p>
+                    <p>Start Date: <span class="start-date">2024-04-05</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-12</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 3</p>
+                    <p>Start Date: <span class="start-date">2024-04-07</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-14</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="subject">
+            <h2 onclick="toggleAssignments('subject3')">Subject 3</h2>
+            <div class="assignments" id="subject3">
+                <div class="assignment-info">
+                    <p>Assignment 1</p>
+                    <p>Start Date: <span class="start-date">2024-04-03</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-10</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 2</p>
+                    <p>Start Date: <span class="start-date">2024-04-05</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-12</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 3</p>
+                    <p>Start Date: <span class="start-date">2024-04-07</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-14</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="subject">
+            <h2 onclick="toggleAssignments('subject4')">Subject 4</h2>
+            <div class="assignments" id="subject4">
+                <div class="assignment-info">
+                    <p>Assignment 1</p>
+                    <p>Start Date: <span class="start-date">2024-04-03</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-10</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 2</p>
+                    <p>Start Date: <span class="start-date">2024-04-05</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-12</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 3</p>
+                    <p>Start Date: <span class="start-date">2024-04-07</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-14</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="subject">
+            <h2 onclick="toggleAssignments('subject5')">Subject 5</h2>
+            <div class="assignments" id="subject5">
+                <div class="assignment-info">
+                    <p>Assignment 1</p>
+                    <p>Start Date: <span class="start-date">2024-04-03</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-10</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 2</p>
+                    <p>Start Date: <span class="start-date">2024-04-05</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-12</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 3</p>
+                    <p>Start Date: <span class="start-date">2024-04-07</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-14</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="subject">
+            <h2 onclick="toggleAssignments('subject6')">Subject 6</h2>
+            <div class="assignments" id="subject6">
+                <div class="assignment-info">
+                    <p>Assignment 1</p>
+                    <p>Start Date: <span class="start-date">2024-04-03</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-10</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 2</p>
+                    <p>Start Date: <span class="start-date">2024-04-05</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-12</span></p>
+                </div>
+                <div class="assignment-info">
+                    <p>Assignment 3</p>
+                    <p>Start Date: <span class="start-date">2024-04-07</span></p>
+                    <p>Due Date: <span class="due-date">2024-04-14</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAssignments(subjectId) {
+            var assignments = document.getElementById(subjectId);
+            if (assignments.style.display === "none") {
+                assignments.style.display = "block";
+            } else {
+                assignments.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
